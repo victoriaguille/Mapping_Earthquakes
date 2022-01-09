@@ -155,7 +155,11 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_week.geoj
     style: styleInfo,
     onEachFeature: function(feature, layer) {
       layer.bindPopup("Magnitude: " + feature.properties.mag + "<br>Location: " + feature.properties.place);
-  });
+    }
+  }).addTo(majorEarthquakes);
+  // add layer to map
+  majorEarthquakes.addTo(map);
+});
 
   // Here we create a legend control object.
 let legend = L.control({
